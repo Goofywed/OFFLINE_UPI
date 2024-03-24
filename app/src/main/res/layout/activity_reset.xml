@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    android:gravity="center"
+    tools:context=".ResetActivity">
+
+    <!-- Spinner for Question 1 -->
+    <Spinner
+        android:id="@+id/s1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
+    <!-- EditText for Answer 1 -->
+    <EditText
+        android:id="@+id/editTextSecurityAnswer1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Answer 1"
+        android:inputType="text"
+        android:layout_below="@id/s1"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Spinner for Question 2 -->
+    <Spinner
+        android:id="@+id/s2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextSecurityAnswer1"
+        android:layout_marginTop="16dp"/>
+
+    <!-- EditText for Answer 2 -->
+    <EditText
+        android:id="@+id/editTextSecurityAnswer2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Answer 2"
+        android:inputType="text"
+        android:layout_below="@id/s2"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Spinner for Question 3 -->
+    <Spinner
+        android:id="@+id/s3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextSecurityAnswer2"
+        android:layout_marginTop="16dp"/>
+
+    <!-- EditText for Answer 3 -->
+    <EditText
+        android:id="@+id/editTextSecurityAnswer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Answer 3"
+        android:inputType="text"
+        android:layout_below="@id/s3"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Button to Submit -->
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_below="@id/editTextSecurityAnswer3"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>

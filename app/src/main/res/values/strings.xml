@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">YourAppName</string>
+    <string name="select_question">Select a security question</string>
+    <string name="answer_hint">Answer</string>
+    <string name="submit">Submit</string>
+</resources>

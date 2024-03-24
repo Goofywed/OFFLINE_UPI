@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnSetPin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set Pin"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnEnterPin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Pin"
+        android:layout_below="@id/btnSetPin"/>
+
+    <Button
+        android:id="@+id/btnSecurity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter security question"
+        android:layout_below="@id/btnEnterPin"/>
+
+    <Button
+        android:id="@+id/btnSecurityforget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="reset security question"
+        android:layout_below="@id/btnSecurity"/>
+
+</RelativeLayout>
