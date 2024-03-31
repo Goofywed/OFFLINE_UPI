@@ -74,6 +74,9 @@ public class NewActivity extends AppCompatActivity {
         });
     }
 
+
+
+
     // Method to show main layouts
     private void showMainLayouts() {
         mainFeatureLayout.setVisibility(View.VISIBLE);
@@ -107,15 +110,18 @@ public class NewActivity extends AppCompatActivity {
         if (cursor != null && cursor.moveToFirst()) {
             do {
                 String contactName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+                String contactNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                 if (!uniqueContacts.contains(contactName)) {
                     uniqueContacts.add(contactName);
-                    contactList.add(contactName);
+                    // Add both name and number to the list
+                    contactList.add(contactName + " - " + contactNumber);
                 }
             } while (cursor.moveToNext());
             cursor.close();
         }
         adapter.notifyDataSetChanged();
     }
+
 
 
     // Method to check and request permission

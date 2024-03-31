@@ -86,12 +86,10 @@
         app:layout_constraintTop_toBottomOf="@id/searchCardView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:divider="@null" />
 
-
-
-
-    <!-- LinearLayout for Bank Image, Scanner Image, Phone Image, and UPI ID Image -->
+    <!-- LinearLayout for main features -->
     <LinearLayout
         android:id="@+id/mainfeature"
         android:layout_width="wrap_content"
@@ -103,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center_horizontal">
 
-        <!-- LinearLayout for Bank Image and Scanner Image -->
+        <!-- LinearLayout for bank and scanner images -->
         <LinearLayout
             android:id="@+id/bankScannerLinearLayout"
             android:layout_width="wrap_content"
@@ -149,7 +147,6 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/scaner3"
-
                     android:layout_gravity="center"
                     />
 
@@ -162,7 +159,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- LinearLayout for Phone Image and UPI ID Image -->
+        <!-- LinearLayout for phone and UPI ID images -->
         <LinearLayout
             android:id="@+id/phoneUPILinearLayout"
             android:layout_width="wrap_content"
@@ -220,78 +217,73 @@
                     android:layout_gravity="center"/>
             </LinearLayout>
         </LinearLayout>
-
-
     </LinearLayout>
+
+    <!-- LinearLayout for Recent Transaction -->
     <LinearLayout
+        android:id="@+id/recentTransactionLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:gravity="center_vertical"
         app:layout_constraintTop_toBottomOf="@id/mainfeature"
         android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- LinearLayout for Recent Transaction -->
-        <LinearLayout
-            android:id="@+id/recentTransactionLayout"
-            android:layout_width="match_parent"
+        <!-- Recent Transaction Image -->
+        <ImageView
+            android:id="@+id/recentTransactionImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/recent2"/>
+
+        <!-- Text for Recent Transaction -->
+        <TextView
+            android:id="@+id/recentTransactionTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="16dp"
-            android:gravity="center_vertical">
+            android:text="Check recent transactions"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
 
-            <!-- Recent Transaction Image -->
-            <ImageView
-                android:id="@+id/recentTransactionImageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="15dp"
-                android:src="@drawable/recent2"/>
+    <!-- LinearLayout for Bank Balance -->
+    <LinearLayout
+        android:id="@+id/bankBalanceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/recentTransactionLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-            <!-- Text for Recent Transaction -->
-            <TextView
-                android:id="@+id/recentTransactionTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Check recent transactions"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:layout_marginStart="8dp"/>
-        </LinearLayout>
+        <!-- History Image -->
+        <ImageView
+            android:id="@+id/historyImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/history1"/>
 
-        <!-- LinearLayout for Bank Balance -->
-        <LinearLayout
-            android:id="@+id/bankBalanceLayout"
-            android:layout_width="match_parent"
+        <!-- Text for Bank Balance -->
+        <TextView
+            android:id="@+id/bankBalanceTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp">
-
-            <!-- History Image -->
-            <ImageView
-                android:id="@+id/historyImageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="15dp"
-                android:src="@drawable/history1"/>
-
-            <!-- Text for Bank Balance -->
-            <TextView
-                android:id="@+id/bankBalanceTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Check bank balance"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:layout_marginStart="8dp"/>
-        </LinearLayout>
-
+            android:text="Check bank balance"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="8dp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
