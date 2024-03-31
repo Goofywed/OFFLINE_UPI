@@ -7,60 +7,45 @@
     tools:context=".NewActivity">
 
     <!-- Search Bar -->
-
     <androidx.cardview.widget.CardView
         android:id="@+id/searchCardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="#F5F5F5"
         app:cardCornerRadius="20dp"
         app:cardElevation="4dp"
-        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toStartOf="@id/profileImageView"
         app:layout_constraintHorizontal_bias="1.0"
-        app:cardBackgroundColor="#F5F5F5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="29dp"
-                android:layout_height="55dp"
-                android:src="@drawable/search1"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="8dp"
-
-                android:layout_gravity="center"/>
-
-            <EditText
-                android:id="@+id/searchEditText"
+            <SearchView
+                android:id="@+id/searchView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="Search"
-                android:background="@android:color/transparent"
                 android:layout_weight="1"
-                android:textColor="@android:color/black"
-                android:paddingVertical="12dp"/>
+                android:background="@android:color/transparent"
+                android:queryHint="Search" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/mic"
                 android:layout_marginEnd="12dp"
-
-                android:contentDescription="Microphone Icon"/>
+                android:contentDescription="Microphone Icon"
+                android:src="@drawable/mic" />
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 
     <!-- Profile Icon -->
-
     <ImageView
         android:id="@+id/profileImageView"
         android:layout_width="29dp"
@@ -73,18 +58,38 @@
         app:layout_constraintVertical_bias="0.5" />
 
     <!-- Body Image -->
-    <!-- Body Image -->
-    <ImageView
-        android:id="@+id/bodyImageView"
+    <LinearLayout
+        android:id="@+id/bodyImageLayout"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/body"
         android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@id/searchCardView"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchCardView">
 
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:scaleType="fitCenter"/>
+        <ImageView
+            android:id="@+id/bodyImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/body"
+            android:scaleType="fitCenter"/>
+    </LinearLayout>
+
+    <!-- ListView to display search results -->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/searchCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
 
     <!-- LinearLayout for Bank Image, Scanner Image, Phone Image, and UPI ID Image -->
     <LinearLayout
@@ -92,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/bodyImageView"
+        app:layout_constraintTop_toBottomOf="@id/bodyImageLayout"
         android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -146,7 +151,7 @@
                     android:src="@drawable/scaner3"
 
                     android:layout_gravity="center"
-                   />
+                    />
 
                 <!-- Name of the Scanner -->
                 <TextView
@@ -182,7 +187,7 @@
                     android:layout_height="80dp"
                     android:src="@drawable/phone1"
                     android:layout_gravity="center"
-                 />
+                    />
 
                 <!-- Name of the Phone -->
                 <TextView
